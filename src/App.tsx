@@ -1,5 +1,7 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import EncounterA from './components/encounterA'
+import EncounterB from './components/encounterB'
 
 function App() {
 
@@ -12,10 +14,10 @@ function App() {
       <div id="encounters-div" className="col-start-1 col-span-3 bg-slate-900 border-8 border-slate-100 font-pixel rounded-l-lg">
         <h1 className="bg-slate-900 text-6xl mt-12">ENCOUNTERS</h1>
         <div id="encounter-button-div" className="bg-slate-900 text-6xl flex flex-col flex-wrap m-6 items-center">
-        <button id="encounter-a" className="bg-slate-700 w-24 h-24 border-4 border-slate-100 hover:bg-slate-400 rounded-md m-4">A</button>
-        <button id="encounter-a" className="bg-slate-700 w-24 h-24 border-4 border-slate-100 hover:bg-slate-400 rounded-md m-4">B</button>
-        <button id="encounter-a" className="bg-slate-700 w-24 h-24 border-4 border-slate-100 hover:bg-slate-400 rounded-md m-4">C</button>
-        <button id="encounter-a" className="bg-slate-700 w-24 h-24 border-4 border-slate-100 hover:bg-slate-400 rounded-md m-4">D</button>
+        <Link to="/encounterA" target="_blank" className="bg-slate-900"><button id="encounter-a" className="bg-slate-700 w-24 h-24 border-4 border-slate-100 hover:bg-slate-400 rounded-md m-4">A</button></Link>
+        <Link to="/encounterB" target="_blank" className="bg-slate-900"><button id="encounter-b" className="bg-slate-700 w-24 h-24 border-4 border-slate-100 hover:bg-slate-400 rounded-md m-4">B</button></Link>
+        <button id="encounter-c" className="bg-slate-700 w-24 h-24 border-4 border-slate-100 hover:bg-slate-400 rounded-md m-4">C</button>
+        <button id="encounter-d" className="bg-slate-700 w-24 h-24 border-4 border-slate-100 hover:bg-slate-400 rounded-md m-4">D</button>
         </div>
       </div>
       <div id="title-div" className="col-start-4 col-span-2 bg-slate-900 border-8 border-slate-100 flex flex-row text-9xl font-title pt-16">
@@ -72,6 +74,8 @@ function App() {
       </div>
     }>
     </Route>
+    <Route path="/encounterA" element={<EncounterA />}></Route>
+    <Route path="/encounterB" element={<EncounterB />}></Route>
     </Routes>
     </BrowserRouter>
     </>
